@@ -1,24 +1,41 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import api from './api'
 import "./App.css";
 
-function App() {
-    const [nomeCliente, setNomeCliente] = useState("");
+class App extends Component {
+    
+    state = {
+        produto: [],
+    }
 
-    const getNomeCliente = () => {
-        axios
-            .get("https://trabalho-react-g2.herokuapp.com/cliente/1")
-            .then((response) => {
-                setNomeCliente(response.data.nome);
-            });
-    };
+   async componentDidMount() {
+            const response = await api.get('produto');
+            this.setState ({ produto: response.data });
+   }
 
-    getNomeCliente();
+   render() {
+
+    const { produto } = this.state;
+
     return (
-        <div>
-            <h1>Bem-vindo, {nomeCliente}!</h1>
+        <section className="container">
+            <div className = "listaProdutos">
+            {produto.map(produto => (
+                <div className= "produto"> 
+                    <div key={produto.id} className = "conteudo-produto">
+                    <h2>
+                    <strong>{produto.nome}</strong>
+                    </h2>
+                    <p>{produto.descricao}</p>
+                    <p>{produto.qtdEstoque}</p>
+                    <p>{produto.valor}</p>
+                    </div>
+                </div>
+        ))}
         </div>
+      </section>
     );
-}
+  };
+};
 
 export default App;

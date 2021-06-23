@@ -1,3 +1,31 @@
+.container {
+  min-height: 100vh;
+  background-color: #BFD7ED;
+}
+
+.listaProdutos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.produto {
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.conteudo-produto {
+  padding: 30px;
+}
+
+.conteudo-produto p {
+  text-align: center;
+}
+
+.conteudo-produto h2 {
+  text-align: center;
+}
+
 .App {
   text-align: center;
 }
