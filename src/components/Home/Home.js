@@ -2,18 +2,17 @@ import React, { Component } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Header from "./components/Header/Header.js";
-
-class App extends Component {
+class Home extends Component {
 
   render() {
   
     return (
       <div>
-        <Header/>
+        <h1>Nós vamos conseguir ! Ecommerce</h1>
+        <p>Papapa Receitinha de bolo </p>
       </div>
     );
   }
 }
 
-export default App;
+export default Home;
