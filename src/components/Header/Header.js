@@ -14,6 +14,7 @@ import Produtos from "../Produtos/Produtos.js";
 import Minhaconta from "../Minhaconta/Minhaconta.js";
 import categoria from "../Categoria/Categoria.js";
 import Funcionarios from "../Funcionarios/Funcionarios.js";
+import login from "../Login/Login.js"
 
 export default class Header extends Component {
     render() {
@@ -37,6 +38,11 @@ export default class Header extends Component {
                                     <Nav.Link>
                                         <Link to="/MinhaConta">
                                             Minha Conta
+                                        </Link>
+                                    </Nav.Link>
+                                    <Nav.Link>
+                                        <Link to="/login">
+                                            Login
                                         </Link>
                                     </Nav.Link>
                                     <NavDropdown
@@ -64,6 +70,7 @@ export default class Header extends Component {
                         <Route exact path="/" component={Home} />
                         <Route path="/produtos" component={Produtos} />
                         <Route path="/MinhaConta" component={Minhaconta} />
+                        <Route path="/login" component={login} />
                         <Route path="/categoria" component={categoria} />
                         <Route path="/Funcionarios" component={Funcionarios} />
                     </Switch>
