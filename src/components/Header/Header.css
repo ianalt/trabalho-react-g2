@@ -1,1 +1,12 @@
 .Header {}
+
+#login {
+    float: right;
+}
+
+#carrinho {
+    width: 30px;
+    height: 20px;
+    float: right;
+    filter: invert(100%);
+}

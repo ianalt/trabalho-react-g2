@@ -50,8 +50,8 @@ const Funcionarios = () => {
           <>
             <div>
               <section className = "conteiner">
-                <h1 style={{ textAlign: "center" }}>Funcionarios</h1>
-                <button className = "salvar" onClick = {() => setModalVisivel(true)}>Cadastre um Funcionario</button>
+                <h1 style={{ textAlign: "center" }}>Funcionários</h1>
+                <button className = "salvar" onClick = {() => setModalVisivel(true)}>Cadastre um Funcionário</button>
                 <div className="category">
                   {funcionario.map((funcionario) => (
                     <div key={funcionario.id} className = "category-content">
@@ -69,7 +69,7 @@ const Funcionarios = () => {
           <div>
             <form onSubmit = {onSubmit}>
               <div className = "formulario">
-                <label htmlFor = "nomeFuncionario">Nome do Funcionario:&emsp;&emsp;</label>
+                <label htmlFor = "nomeFuncionario">Nome do Funcionário:&emsp;&emsp;</label>
                 <input type = "text" name="nome" id="nomeFuncionario" onChange={onChange}></input>
               </div>
               <div className = "formulario">
