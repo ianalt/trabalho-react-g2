@@ -14,7 +14,13 @@ import Produtos from "../Produtos/Produtos.js";
 import Minhaconta from "../Minhaconta/Minhaconta.js";
 import categoria from "../Categoria/Categoria.js";
 import Funcionarios from "../Funcionarios/Funcionarios.js";
+<<<<<<< HEAD
 import login from "../Login/Login.js"
+=======
+import carrinho from './carrinho.jpg';
+import "./Header.css";
+import Cadastro from "../Cadastro/Cadastro.js";
+>>>>>>> 1f4bb0f035274d2955301d96ab447aef7b3f1869
 
 export default class Header extends Component {
     render() {
@@ -34,6 +40,9 @@ export default class Header extends Component {
                                     </Nav.Link>
                                     <Nav.Link>
                                         <Link to="/Funcionarios">Funcionarios</Link>
+                                    </Nav.Link>
+                                    <Nav.Link>
+                                        <Link to="/Cadastro">Cadastre-se</Link>
                                     </Nav.Link>
                                     <Nav.Link>
                                         <Link to="/MinhaConta">
@@ -64,6 +73,8 @@ export default class Header extends Component {
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>
+                        <Nav.Link id="login"><Link to="/Login">Login</Link></Nav.Link>
+                        <Nav.Link><Link to="/Carrinho"><img id="carrinho" src={carrinho} /></Link></Nav.Link>
                     </Navbar>
 
                     <Switch>
@@ -73,6 +84,7 @@ export default class Header extends Component {
                         <Route path="/login" component={login} />
                         <Route path="/categoria" component={categoria} />
                         <Route path="/Funcionarios" component={Funcionarios} />
+                        <Route path="/Cadastro" component={Cadastro} />
                     </Switch>
                 </div>
             </Router>
