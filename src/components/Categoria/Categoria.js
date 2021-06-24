@@ -49,9 +49,9 @@ const Categoria = () => {
         return(
           <>
             <div>
-              <h1 style={{ textAlign: "center" }}>Categorias</h1>
-              <button className = "salvar" onClick = {() => setModalVisivel(true)}>Cadastre uma Categoria</button>
-              <section className = "container">
+              <section className = "conteiner">
+                <h1 style={{ textAlign: "center" }}>Categorias</h1>
+                <button className = "salvar" onClick = {() => setModalVisivel(true)}>Cadastre uma Categoria</button>
                 <div className="category">
                   {categorias.map((categoria) => (
                     <div key={categoria.id} className = "category-content">
