@@ -13,6 +13,7 @@ import Home from "../Home/Home.js";
 import Produtos from "../Produtos/Produtos.js";
 import Minhaconta from "../Minhaconta/Minhaconta.js";
 import categoria from "../Categoria/Categoria.js";
+import Funcionarios from "../Funcionarios/Funcionarios.js";
 
 export default class Header extends Component {
     render() {
@@ -29,6 +30,9 @@ export default class Header extends Component {
                                 <Nav className="me-auto">
                                     <Nav.Link>
                                         <Link to="/produtos">Produtos</Link>
+                                    </Nav.Link>
+                                    <Nav.Link>
+                                        <Link to="/Funcionarios">Funcionarios</Link>
                                     </Nav.Link>
                                     <Nav.Link>
                                         <Link to="/MinhaConta">
@@ -61,6 +65,7 @@ export default class Header extends Component {
                         <Route path="/produtos" component={Produtos} />
                         <Route path="/MinhaConta" component={Minhaconta} />
                         <Route path="/categoria" component={categoria} />
+                        <Route path="/Funcionarios" component={Funcionarios} />
                     </Switch>
                 </div>
             </Router>
