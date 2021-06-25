@@ -1,4 +1,4 @@
-.Header {}
+
 
 #login {
     float: right;
@@ -9,4 +9,5 @@
     height: 20px;
     float: right;
     filter: invert(100%);
+    color: black;
 }

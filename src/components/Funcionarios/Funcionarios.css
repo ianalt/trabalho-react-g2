@@ -12,33 +12,34 @@ h1{
     color: #003B73;
 }
 
-.category {
+.staff {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
     padding: 30px;
     gap: 50px;
 }
 
-.category-content {
+.staff-content {
     background: #60A3D9;
     box-shadow: rgba(42, 53, 214, 0.288);
     padding: 20px;
     border-radius: 25px;
     transition: transform 100ms ease-in-out;
+    position: relative;
 }
 
-.category-content:hover{
+.staff-content:hover{
     transform: scale(1.05);
 }
 
-.category-content h2 {
+.staff-content h2 {
     text-align: center;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
 
-.category-content p {
+.staff-content p {
     text-align: center;
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
@@ -62,6 +63,7 @@ h1{
 
 button:hover {
     background-color: #0074B7;
+    border-radius: 4px;
 }
 
 .salvar {
@@ -73,4 +75,13 @@ button:hover {
     align-items: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+}
+
+.delete-button {
+    border: unset;
+    background-color: unset;
+    font-size: 18px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
 }
