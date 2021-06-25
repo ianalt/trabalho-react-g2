@@ -1,1 +1,69 @@
-.Home {}
+h1 {
+    font-size: 60px;
+    color: black;
+}
+
+.img-criador {
+    height: 50px;
+    width: auto;
+}
+
+.titulo {
+    text-align: center;
+    padding: 5px;
+}
+
+.quadrado {
+    height: 100px;
+    width: auto;
+}
+
+footer {
+    display: grid;
+}
+
+#box-criadores {
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+#secao-1,
+#secao-2 {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.campo-criador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 275px;
+    height: auto;
+    max-height: 375px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.img-criador {
+    width: 225px;
+    height: 225px;
+    border: 3px solid transparent;
+    transition: all 0.35s ease;
+    border-radius: 50%;
+}
+
+.img-criador:hover {
+    border-color: #1b70e0;
+    transform: scale(1.025);
+}
+
+.nome-criador {
+    font-size: 24px;
+}

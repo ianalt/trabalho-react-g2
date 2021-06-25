@@ -18,6 +18,8 @@ import {
 import api from "../../api";
 
 const Produtos = () => {
+    /*     const [values, setValues] = useState(initialValue);
+    const [modalVisivel, setModalVisivel] = useState(false); */
     const [produto, setProduto] = useState([]);
 
     useEffect(() => {
@@ -29,8 +31,26 @@ const Produtos = () => {
         loadProduto();
     }, []);
 
+    /*     function onChange(ev) {
+        const {name, value} = ev.target;
+        setValues({...values, [name]: value});
+    }
+
+    function onSubmit(ev) {
+        ev.preventDefault();
+
+        api.post("produto", values).then((response => {
+            window.location.reload();
+        }));
+    }
+
+    const deleteProduto = async (id) => {
+        await api.delete(`produto/${id}`);
+        produtos.filter((produto))
+    }
+ */
     // como não será possível inserir imagens,
-    // colocamos uma imagem padrão que será inserida para todos os produtos novos inserido
+    // colocamos uma imagem padrão que será inserida para todos os produtos novos inseridos
     const verificaImg = (id, fotoLink) => {
         if (id >= 10) {
             fotoLink =
