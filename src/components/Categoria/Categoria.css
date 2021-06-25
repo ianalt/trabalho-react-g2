@@ -83,4 +83,15 @@ button:hover {
     position: absolute;
     top: 8px;
     right: 8px;
+    color: rgb(10, 10, 163);
+}
+
+.update-button {
+    border: unset;
+    background-color: unset;
+    font-size: 18px;
+    position: absolute;
+    top: 30px;
+    right: 8px;
+    color: rgb(10, 10, 163);
 }

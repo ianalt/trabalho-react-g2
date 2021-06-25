@@ -1,20 +1,23 @@
 import React, {useState, useEffect} from 'react';
 import {FaTrashAlt} from 'react-icons/fa'
+import {FiEdit} from 'react-icons/fi'
 import Modal from '../Modal/Modal'
-
 import api from "../../api";
 import  './Categoria.css'
+import FormUpdate from '../FormUpdate/FormUpdate'
 
 const initialValue = {
   nome:'',
   descricao:'',
 }
 
+ var idCategoria = '';
 const Categoria = () => {
-    
+
     const [values, setValues] = useState (initialValue);
     const [categorias, setCategorias] = useState ([])
     const [modalVisivel, setModalVisivel] = useState(false);
+    const [modalVisivelUpdate, setModalVisivelUpdate] = useState(false);
     
 
     useEffect(() => {
@@ -47,6 +50,20 @@ const Categoria = () => {
       window.location.reload();
     }
 
+    function UpdateCategoria (id) {
+      idCategoria = id;
+      setModalVisivelUpdate(true);
+    }
+    
+    function onSubmitUpdate (ev) {
+       ev.preventDefault();
+
+    api.put("categoria/"+idCategoria, values)
+      .then((response => {
+        window.location.reload();
+      }));
+    }
+
         return(
           <>
             <div>
@@ -61,6 +78,9 @@ const Categoria = () => {
                           <button type = "button" className="delete-button" onClick={() =>deleteCategoria(categoria.id)} >
                               <FaTrashAlt></FaTrashAlt>
                           </button>
+                          <button type = "button" className = "update-button" onClick = {() => UpdateCategoria (categoria.id)}>
+                            <FiEdit></FiEdit>
+                          </button>
                     </div>
                   ))}
                 </div>
@@ -69,7 +89,7 @@ const Categoria = () => {
         
         {
         modalVisivel ? (
-        <Modal onClose = {() => setModalVisivel(false)} conteudo = {
+        <Modal onClose = {() => setModalVisivel(false)}  conteudo = {
           <div>
             <form onSubmit = {onSubmit}>
               <div className = "formulario">
@@ -87,6 +107,28 @@ const Categoria = () => {
           </div>}> 
         </Modal>
         ): null}
+
+{
+        modalVisivelUpdate ? (
+        <FormUpdate onClose = {() => setModalVisivelUpdate(false)}  conteudo = {
+          <div>
+            <form onSubmit = {onSubmitUpdate}>
+              <div className = "formulario">
+                <label htmlFor = "nomeCategoria">Nome da Categoria:&emsp;&emsp;</label>
+                <input type = "text" name="nome" id="nomeCategoria" onChange={onChange}></input>
+              </div>
+              <div className = "formulario">
+                <label htmlFor = "descricaoCategoria">Descricao da Categoria:&emsp;</label>
+                <input type = "text" name="descricao" id = "descricaoCategoria" onChange={onChange}></input>
+              </div>
+                <div className = "formulario">
+                <button type="submit">Editar</button>
+                </div>
+            </form>
+          </div>}> 
+        </FormUpdate>
+        ): null}
+
         </>
         );
     }
