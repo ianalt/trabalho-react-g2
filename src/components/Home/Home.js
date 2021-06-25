@@ -62,8 +62,8 @@ class Home extends Component {
 
                     <Row style={{ "margin-top": "40px" }}>
                         <Col xs={6} md={4}>
-                            <Card style={{ width: "15rem" }}>
-                                <Card.Body>
+                            <Card style={{ width: "15rem", border: "none" }}>
+                                <Card.Body style={{borderbox: "none"}}>
                                     <Card.Text>
                                         <a
                                             href="https://www.linkedin.com/in/alice-lopes-1942a4204"
@@ -76,12 +76,13 @@ class Home extends Component {
                                                 alt="Foto de Alice"
                                             />
                                         </a>
+                                        <p style={{textAlign: "center"}}>Alice</p>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
                         </Col>
                         <Col xs={6} md={4}>
-                            <Card style={{ width: "15rem" }}>
+                            <Card style={{ width: "15rem", border: "none"  }}>
                                 <Card.Body>
                                     <Card.Text>
                                         <a
@@ -95,12 +96,13 @@ class Home extends Component {
                                                 alt="Foto de Dayane"
                                             />
                                         </a>
+                                        <p style={{textAlign: "center"}}>Dayane</p>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
                         </Col>
                         <Col xs={6} md={4}>
-                            <Card style={{ width: "15rem" }}>
+                            <Card style={{ width: "15rem", border: "none"  }}>
                                 <Card.Body>
                                     <Card.Text>
                                         <a
@@ -111,9 +113,10 @@ class Home extends Component {
                                             <img
                                                 class="img-criador"
                                                 src={deb}
-                                                alt="Foto de Estevão"
+                                                alt="Foto de Débora"
                                             />
                                         </a>
+                                        <p style={{textAlign: "center"}}>Débora</p>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
@@ -121,7 +124,7 @@ class Home extends Component {
                     </Row>
                     <Row style={{ "margin-top": "40px" }}>
                         <Col xs={6} md={4}>
-                            <Card style={{ width: "15rem" }}>
+                            <Card style={{ width: "15rem", border: "none"  }}>
                                 <Card.Body style={{ border: "" }}>
                                     <Card.Text>
                                         <a
@@ -135,12 +138,13 @@ class Home extends Component {
                                                 alt="Foto de Ian"
                                             />
                                         </a>
+                                        <p style={{textAlign: "center"}}>Ian</p>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
                         </Col>
                         <Col xs={6} md={4}>
-                            <Card style={{ width: "15rem" }}>
+                            <Card style={{ width: "15rem", border: "none"  }}>
                                 <Card.Body>
                                     <Card.Text>
                                         <a
@@ -154,12 +158,13 @@ class Home extends Component {
                                                 alt="Foto de Estevão"
                                             />
                                         </a>
+                                        <p style={{textAlign: "center"}}>Estevão</p>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
                         </Col>
                         <Col xs={6} md={4}>
-                            <Card style={{ width: "15rem" }}>
+                            <Card style={{ width: "15rem", border: "none"  }}>
                                 <Card.Body>
                                     <Card.Text>
                                         <a
@@ -173,6 +178,7 @@ class Home extends Component {
                                                 alt="Foto de Matheus"
                                             />
                                         </a>
+                                            <p style={{textAlign: "center"}}>Matheus</p>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>

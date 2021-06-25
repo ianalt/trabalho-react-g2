@@ -12,24 +12,27 @@ import categoria from "../Categoria/Categoria.js";
 import Funcionarios from "../Funcionarios/Funcionarios.js";
 import Cadastro from "../Cadastro/Cadastro";
 import login from "../Login/Login.js"
-import {AiOutlineShoppingCart} from 'react-icons/ai'
-import  './Header.css'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+import './Header.css'
 import StoreProvider from "../Store/Provider.js";
 import RoutesPrivate from "../Routes/Private";
+import Carrinho from '../Carrinho/Carrinho.js';
+import carrinho from './carrinho.jpg';
 
 export default class Header extends Component {
+
     render() {
         return (
             <Router>
                 <div className="App">
                     <Navbar bg="dark" expand="lg" variant="dark">
                         <Container>
-                            <Navbar.Brand>
-                                <Link to="/">Papapa</Link>
-                            </Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="me-auto">
+                                <Nav.Link>
+                                <Link to="/">Home</Link>
+                                    </Nav.Link>
                                     <Nav.Link>
                                         <Link to="/produtos">Produtos</Link>
                                     </Nav.Link>
@@ -44,22 +47,11 @@ export default class Header extends Component {
                                             Minha Conta
                                         </Link>
                                     </Nav.Link>
-                                    <NavDropdown
-                                        title="Categorias"
-                                        id="basic-nav-dropdown"
-                                    >
-                                        <NavDropdown.Item>
-                                            <Link to="/categoria">
-                                                Categoria
-                                            </Link>
-                                        </NavDropdown.Item>
-                                        <NavDropdown.Item>
-                                            Another action
-                                        </NavDropdown.Item>
-                                        <NavDropdown.Item>
-                                            Something
-                                        </NavDropdown.Item>
-                                    </NavDropdown>
+                                    <Nav.Link>
+                                        <Link to="/categoria">
+                                            Categoria
+                                        </Link>
+                                    </Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>
@@ -74,11 +66,12 @@ export default class Header extends Component {
                         <Route path="/categoria" component={categoria} />
                         <Route path="/Funcionarios" component={Funcionarios} />
                         <Route path="/Cadastro" component={Cadastro} />
+                        <Route path="/Carrinho" component={Carrinho} />
                     </Switch>
                     <StoreProvider>
                         <Switch>
-                            <Route path="/login" component={login}/>
-                            <RoutesPrivate path="/home" component={Home}/>
+                            <Route path="/login" component={login} />
+                            <RoutesPrivate path="/home" component={Home} />
                         </Switch>
                     </StoreProvider>
                 </div>

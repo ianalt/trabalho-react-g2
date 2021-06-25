@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import { useCart } from '../Context/CartContext'
 
 import {
     Titulo,
@@ -21,6 +22,12 @@ const Produtos = () => {
     /*     const [values, setValues] = useState(initialValue);
     const [modalVisivel, setModalVisivel] = useState(false); */
     const [produto, setProduto] = useState([]);
+
+    const cart = useCart()
+    const itemsCount = Object.keys(cart.cart).length
+    const add = produto => () => {
+        cart.addToCart(produto)
+    }
 
     useEffect(() => {
         async function loadProduto() {
@@ -89,7 +96,7 @@ const Produtos = () => {
                                     <PrecoProduto>
                                         R${produto.valor}
                                     </PrecoProduto>
-                                    <BotaoCompra>Comprar</BotaoCompra>
+                                    <BotaoCompra onClick={add(produto)}>Comprar</BotaoCompra>
                                 </BoxBody>
                             </Box>
                         </Col>
