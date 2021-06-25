@@ -1,12 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useHistory} from 'react-router-dom';
-
-import "bootstrap/dist/css/bootstrap.min.css";
-
-import Card from "react-bootstrap/Card";
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import {FaTrashAlt} from 'react-icons/fa'
 import Modal from '../Modal/Modal'
 
 import api from "../../api";
@@ -22,7 +15,7 @@ const Categoria = () => {
     const [values, setValues] = useState (initialValue);
     const [categorias, setCategorias] = useState ([])
     const [modalVisivel, setModalVisivel] = useState(false);
-    const history = useHistory();
+    
 
     useEffect(() => {
      async function loadCategorias () {
@@ -42,8 +35,16 @@ const Categoria = () => {
 
     api.post("categoria", values)
       .then((response => {
-        history.push('/');
+        window.location.reload();
       }));
+    }
+
+    const deleteCategoria = async (id) => {
+      await api.delete(`categoria/${id}`);
+      categorias.filter((categoria) => {
+        return categoria.id !== id;
+      });
+      window.location.reload();
     }
 
         return(
@@ -57,6 +58,9 @@ const Categoria = () => {
                     <div key={categoria.id} className = "category-content">
                           <h2>{categoria.nome}</h2>
                           <p>{categoria.descricao}</p>
+                          <button type = "button" className="delete-button" onClick={() =>deleteCategoria(categoria.id)} >
+                              <FaTrashAlt></FaTrashAlt>
+                          </button>
                     </div>
                   ))}
                 </div>

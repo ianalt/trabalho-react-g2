@@ -1,5 +1,5 @@
 import React from 'react';
-import { Component, setState } from 'react';
+import { Component } from 'react';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -60,7 +60,7 @@ export class Cadastro extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        const { nome, usuario, cpf, email, dataNascimento, rua, numero, complemento, bairro, cidade, estado, cep} = this.state;
+        
 
         const json = JSON.stringify({nome: this.state.nome, usuario: this.state.usuario, cpf: this.state.cpf, email: this.state.email, dataNascimento: this.state.dataNascimento, 
             endereco:{ rua: this.state.rua, numero: this.state.numero, complemento: this.state.complemento, bairro: this.state.bairro, 
@@ -75,14 +75,8 @@ export class Cadastro extends Component {
             console.log(error);
         })
     }
-    
-    
-    
-
     render() {
 
-        const { nome, usuario, cpf, email, dataNascimento, rua, numero, complemento, bairro, cidade, estado, cep} = this.state; 
-        
         return (
             <div>
                 

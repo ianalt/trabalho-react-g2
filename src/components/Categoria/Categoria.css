@@ -25,6 +25,7 @@ h1{
     padding: 20px;
     border-radius: 25px;
     transition: transform 100ms ease-in-out;
+    position: relative;
 }
 
 .category-content:hover{
@@ -73,4 +74,13 @@ button:hover {
     align-items: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+}
+
+.delete-button {
+    border: unset;
+    background-color: unset;
+    font-size: 18px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
 }

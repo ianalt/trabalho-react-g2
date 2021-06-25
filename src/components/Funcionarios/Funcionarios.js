@@ -42,7 +42,7 @@ const Funcionarios = () => {
 
     const deleteFuncionario = async (id) => {
       await api.delete(`funcionario/${id}`);
-      const funcionarioslist = funcionario.filter((funcionario) => {
+      funcionario.filter((funcionario) => {
         return funcionario.id !== id;
       });
       window.location.reload();
