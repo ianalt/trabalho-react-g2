@@ -24,9 +24,9 @@ top: 365px;
     font-weight: 600;
     font-size: 20px;
     line-height: 35px;
-    /* identical to box height */
-    
-    
+    /* identical to box height  */
+
+
     color: #000000;
 
 }
@@ -49,20 +49,20 @@ top: 365px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
+
 
 }
 
 .caixaQuantidade{
 
-    width: 45px;
-    height: 20px;
+    width: 60px;
+    height: 30px;
 
 }
 
 .encapsulamento{
-    
-    /* justify-content: center; */
+
+    /* / justify-content: center; */ 
     display: flex;
     margin: 0 0 0 0;
 
@@ -78,7 +78,7 @@ top: 365px;
 }
 
 .btnremoveritem{
-    
+
     border: unset;
     background-color: unset;
 
@@ -86,14 +86,13 @@ top: 365px;
 
 .espacamentounit{
 
-    height: 100px;
-    width: 300px;
+    height: 165px;
+    width: 250px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
 }
 
 .finalizarcompra{
@@ -110,9 +109,28 @@ top: 365px;
 }
 
 .carrinhoVazio{
-    
+
     margin: 100px;
     font-size: 50px;
     margin-bottom: 210px;
+
+}
+
+.finalizarCompra {
+    background-color: #60A3D9;
+    border-radius: 20px;
+    width: 170px;
+    height: 40px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.finalizarCompra:hover {
+    background-color: #0074B7;
+}
+
+.text-right{
+
+    margin-top: 10px;
 
 }

@@ -1,2 +1,29 @@
-.Produtos {
+.boxProduto {
+    position: relative ;
+    border-radius: 25px;
+    transition: transform 100ms ease-in-out;
+}
+
+.boxProduto:hover{
+    transform: scale(1.05);
+}
+
+.delete-button {
+    border: unset ;
+    background-color: unset ;
+    font-size: 18px ;
+    position: absolute ;
+    top: 8px ;
+    right: 8px ;
+    color: black ;
+}
+
+.update-button {
+    border: unset;
+    background-color: unset;
+    font-size: 18px;
+    position: absolute;
+    top: 30px;
+    right: 8px;
+    color: black;
 }

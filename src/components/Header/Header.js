@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
 import Home from "../Home/Home.js";
 import Produtos from "../Produtos/Produtos.js";
@@ -17,7 +16,7 @@ import './Header.css'
 import StoreProvider from "../Store/Provider.js";
 import RoutesPrivate from "../Routes/Private";
 import Carrinho from '../Carrinho/Carrinho.js';
-import carrinho from './carrinho.jpg';
+
 
 export default class Header extends Component {
 
@@ -31,32 +30,32 @@ export default class Header extends Component {
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="me-auto">
                                 <Nav.Link>
-                                <Link to="/">Home</Link>
+                                <Link to="/" className = "links">Home</Link>
                                     </Nav.Link>
                                     <Nav.Link>
-                                        <Link to="/produtos">Produtos</Link>
+                                        <Link to="/produtos" className = "links">Produtos</Link>
                                     </Nav.Link>
                                     <Nav.Link>
-                                        <Link to="/Funcionarios">Funcionarios</Link>
+                                        <Link to="/Funcionarios" className = "links">Funcionarios</Link>
                                     </Nav.Link>
                                     <Nav.Link>
-                                        <Link to="/Cadastro">Cadastre-se</Link>
+                                        <Link to="/Cadastro" className = "links">Cadastre-se</Link>
                                     </Nav.Link>
                                     <Nav.Link>
-                                        <Link to="/MinhaConta">
-                                            Minha Conta
+                                        <Link to="/MinhaConta" className = "links">
+                                            Clientes
                                         </Link>
                                     </Nav.Link>
                                     <Nav.Link>
-                                        <Link to="/categoria">
+                                        <Link to="/categoria" className = "links">
                                             Categoria
                                         </Link>
                                     </Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
                         </Container>
-                        <Nav.Link id="login"><Link to="/Login">Login</Link></Nav.Link>
-                        <Nav.Link><Link to="/Carrinho"><AiOutlineShoppingCart id="carrinho"></AiOutlineShoppingCart></Link></Nav.Link>
+                        <Nav.Link id="login"><Link to="/Login" className = "links">Login</Link></Nav.Link>
+                        <Nav.Link><Link to="/Carrinho" className = "links"><AiOutlineShoppingCart id="carrinho"></AiOutlineShoppingCart></Link></Nav.Link>
                     </Navbar>
 
                     <Switch>

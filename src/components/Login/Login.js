@@ -13,7 +13,13 @@ function initialState(){
 }
 
 function login({ email, cpf }){
- if (email === 'jose.coves@email.com' && cpf === '65782885033'){
+ if (
+   email === 'jose.coves@email.com' && cpf === '65782885033' ||
+   email === 'maria.coves@email.com' && cpf === '69191608031' ||
+   email === 'claudio.jose@email.com' && cpf === '64294714034' ||
+   email === 'dani.aparecida@email.com' && cpf === '64294714034' ||
+   email === 'kleb1990@email.com' && cpf === '56943214055'
+ ){
    return { token: '1234' };
  }
  return { error: 'Email ou CPF incorretos, ou usuário não cadastardo.'}

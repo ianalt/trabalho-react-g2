@@ -80,20 +80,20 @@ const Carrinho = () => {
                                                 <td className="espacamentoqtd">
                                                     <div className="w-20 h-10">
                                                         <div className="relative flex flex-row w-full h-8">
-                                                            <input type="number" defaultValue={quantidade} onBlur={changeQuantidade(key)}
+                                                            <input type="number" defaultValue={quantidade} min="1" max={produto.qtdEstoque} onBlur={changeQuantidade(key)}
                                                                 className="w-full font-semibold text-center text-gray-700 bg-gray-200 outline-none focus:outline-none hover:text-black focus:text-black caixaQuantidade" />
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td className="espacamentounit">
                                                     <span className="text-sm lg:text-base font-medium">
-                                                        R$ {produto.valor}
+                                                        R$ {produto.valor.toFixed(2)}
                                                     </span>
                                                 </td>
                                                 <td className="text-right">
                                                     <span className="text-sm lg:text-base font-medium">
-                                                        R$ {produto.valor * quantidade}
-                                                    </span>
+                                                        R$ {(produto.valor * quantidade).toFixed(2)}
+                                                        </span>
                                                 </td>
                                             </tr>
                                         )
@@ -105,19 +105,25 @@ const Carrinho = () => {
                     </div>
                     <div className="finalizarcompra">
                         <div className="total">
-                            <h3>Total: R${precototal}</h3>
+                            <h3>Total: R${precototal.toFixed(2)}</h3>
                         </div>
-                        <button>
+                        <button className = "finalizarCompra">
                             FINALIZAR COMPRA
                         </button>
                     </div>
                 </div>
             )
+        } else if (temItem = 0) {
+            return (
+                <h1 className="carrinhoVazio"> Seu carrinho está vazio :( </h1>
+            )
+        } else {
+            temItem = 0;
+            return (
+                <h1 className="carrinhoVazio"> Seu carrinho está vazio :( </h1>
+            )
         }
 
-        return (
-            <h1 className="carrinhoVazio"> Seu carrinho está vazio :( </h1>
-        )
     }
 
 

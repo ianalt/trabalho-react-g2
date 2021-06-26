@@ -11,3 +11,14 @@
     filter: invert(100%);
     color: black;
 }
+
+.links{
+
+    color: #0074B7;
+    text-decoration: none;
+
+}
+
+.links:hover{
+    color: #BFD7ED;
+}
